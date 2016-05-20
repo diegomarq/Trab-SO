@@ -61,7 +61,6 @@ int aloca_pagina(Requisicao req) {
 }
 
 int main () {
-	//Criar fila de msg;
 
 	int idfila, idfila_p;
 	int idshm_tb, idshm_np, cont;
@@ -102,7 +101,7 @@ int main () {
 			//TB_pages[0].pageNumber = teste.page;
 			//TB_pages[0].processOwner = teste.pid;
 
-			printf("processo:%d page:%d, used:%d cont:%d\n", TB_pages[cont].processOwner, TB_pages[cont].pageNumber, TB_pages[cont].frameUsed, TB_pages[cont].LRU);
+			//printf("processo:%d page:%d, used:%d cont:%d\n", TB_pages[cont].processOwner, TB_pages[cont].pageNumber, TB_pages[cont].frameUsed, TB_pages[cont].LRU);
 
 			if ((idfila_p = msgget(teste.pid, 0x1FF)) < 0) {
 				printf("erro ao obter fila\n");
