@@ -28,7 +28,7 @@ int main (int argc, char *argv[]) {
 	char file_name[30];
 	FILE *fp;
 
-	if (argc < 1) {
+	if (argc < 2) {
 		printf("Erro: usage: ./processo_usr file.txt\n");
 	} else {
 		teste.mtype = 1;
