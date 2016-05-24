@@ -1,27 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <sys/msg.h>
-
-#define KEY_MSG 0x1234
-
-pid_t getpid(void);
-
-typedef struct requisicao{
-	long mtype;
-	int pid;
-	int page;
-}Requisicao;
-
-typedef struct resp_a{
-	long mtype;
-	int ok;
-}Resp;
+#include "./header/src.h"
 
 Requisicao teste;
 Resp resposta;
+
+pid_t getpid(void);
 
 int main (int argc, char *argv[]) {
 	int idfila = 0, idfila_p;
@@ -29,7 +11,7 @@ int main (int argc, char *argv[]) {
 	FILE *fp;
 
 	if (argc < 2) {
-		printf("Erro: usage: ./processo_usr file.txt\n");
+		printf("Erro: usage: ./processo_usr test/<file.txt>\n");
 	} else {
 		teste.mtype = 1;
 		teste.pid = getpid();
